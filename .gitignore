@@ -1,0 +1,93 @@
+# -------------------------------
+# Ignorar dependencias de Node.js
+# -------------------------------
+node_modules/
+
+# -------------------------------
+# Variables de entorno
+# -------------------------------
+.env
+*.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# -------------------------------
+# Archivos compilados de JS/TS
+# -------------------------------
+dist/
+build/
+
+# -------------------------------
+# Archivos de logs
+# -------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------------
+# Archivos de lock (opcional)
+# -------------------------------
+# package-lock.json
+# yarn.lock
+
+# -------------------------------
+# Archivos de editores
+# -------------------------------
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+out/
+
+# -------------------------------
+# Archivos del sistema operativo
+# -------------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------------
+# Reportes de cobertura
+# -------------------------------
+coverage/
+
+# -------------------------------
+# Ignorados para Java / Spring Boot
+# -------------------------------
+*.class
+*.jar
+*.war
+*.ear
+spring.log
+test-output/
+target/
+bin/
+
+# Eclipse
+.settings/
+.project
+.classpath
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# BlueJ
+*.ctxt
+
+# J2ME
+.mtj.tmp/

@@ -1,0 +1,42 @@
+{
+  "name": "app-finanzas-back",
+  "version": "1.0.0",
+  "description": "Una aplicación móvil diseñada para ayudarte a **llevar el control de tus finanzas personales**, incluyendo **gastos, ingresos, presupuestos** y **metas de ahorro**. Esta app combina una interfaz intuitiva con funcionalidades potentes y seguras para una gestión financiera diaria.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crisvargas25/App-Finanzas-BACK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crisvargas25/App-Finanzas-BACK/issues"
+  },
+  "homepage": "https://github.com/crisvargas25/App-Finanzas-BACK#readme",
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "amqplib": "^0.10.8",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1",
+    "morgan": "^1.10.1",
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  }
+}
