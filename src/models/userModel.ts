@@ -2,6 +2,7 @@ import { Document, Schema, model } from "mongoose";
 import { IRole, roleSchema } from "./roleModel"; // <-- Importa también el schema
 
 export interface IUser extends Document {
+  _id: string;
   name: string;
   email: string;
   password: string;

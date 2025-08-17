@@ -1,5 +1,5 @@
 // Import required libraries
-import amqp from 'amqplib';
+import * as amqp from 'amqplib';
 import dotenv from 'dotenv';
 import {
   registerNotifications,
@@ -22,7 +22,7 @@ const RECOVERY_QUEUE = 'user.recovery.queue';
 
 export async function startConsumer() {
   const connection = await amqp.connect(RABBITMQ_URL!);
-  const channel = await connection.createChannel();
+  const channel: amqp.Channel = await connection.createChannel();
 
   await channel.assertExchange(RABBITMQ_EXCHANGE, 'topic', { durable: true });
 

@@ -9,6 +9,8 @@ declare module "amqplib" {
     assertQueue(queue: string, options?: any): Promise<any>;
     bindQueue(queue: string, source: string, pattern: string): Promise<any>;
     publish(exchange: string, routingKey: string, content: Buffer, options?: any): boolean;
+    consume(queue: string, onMessage: (msg: Message | null) => void, options?: any): Promise<any>;
+    ack(msg: Message, allUpTo?: boolean): Promise<void>;
     // (añade aquí otros métodos que uses, si quieres)
   }
 

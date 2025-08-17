@@ -64,6 +64,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
         email: user.email,
         role: user.role,
         status: user.status,
+        
       },
     });
   } catch (error) {

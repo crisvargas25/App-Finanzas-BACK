@@ -46,6 +46,7 @@ export async function userCreatedEvent(user: {
   email: string;
   role: string;
   creationDate: Date;
+  currency: string;
 }) {
   try {
     await setupRabbitMQ();

@@ -35,7 +35,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    const userId = user._id.toString();
+    const userId = (user._id as string | { toString(): string }).toString();
     const accessToken = generateAccessToken(userId);
     cache.set(userId, accessToken, 60 * 15); // 15 minutes TTL
 
