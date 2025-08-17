@@ -8,9 +8,9 @@ import { RoleType, IRole } from "../models/roleModel";
 // Create a new user
 export const createUser = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { name, email, password, role }: { name: string; email: string; password: string; role: IRole[] } = req.body;
+    const { name, email, password, role, currency }: { name: string; currency: string; email: string; password: string; role: IRole[] } = req.body;
 
-    if (!name || !email || !password || !role || !Array.isArray(role)) {
+    if (!name || !email || !currency || !password || !role || !Array.isArray(role)) {
       res.status(400).json({ message: "All required fields must be provided and role must be an array" });
       return;
     }
@@ -44,6 +44,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
       password: passwordHash,
       role,
       status: true,
+      currency
     });
 
     await userCreatedEvent({
@@ -52,6 +53,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
       email: user.email,
       role: user.role.map((r: IRole) => r.type).join(","),
       creationDate: new Date(),
+      currency: user.currency
     });
 
     res.status(201).json({

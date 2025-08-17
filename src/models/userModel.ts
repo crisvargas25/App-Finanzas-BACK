@@ -9,7 +9,7 @@ export interface IUser extends Document {
   creationDate: Date;
   deleteDate?: Date;
   status: boolean;
-  currency: string;
+  currency: "USD" | "MXN" | "EUR" | "GBP";
 }
 
 const userSchema = new Schema<IUser>({
@@ -29,6 +29,8 @@ const userSchema = new Schema<IUser>({
   currency: {
     type: String,
     required: true,
+    enum: ["USD", "MXN", "EUR", "GBP"], 
+    default: "MXN",
   },
   role: {
     type: [roleSchema],

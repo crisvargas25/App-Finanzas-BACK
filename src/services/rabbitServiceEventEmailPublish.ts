@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import {
   registerNotifications,
   handleRecoveryEmail
-} from '../controllers/emailControllers';
+} from '../controllers/email.Controller';
 
 dotenv.config();
 
