@@ -1,4 +1,4 @@
-import transporter from "../config/emailConfig";
+import transporter, { getTransporter } from "../config/emailConfig";
 import dotenv from "dotenv";
 import { Request, Response } from "express";
 
@@ -12,7 +12,8 @@ export const sendEmail = async (req: Request, res: Response) => {
   const { to, subject, text, name, message } = req.body;
 
   try {
-    await transporter.sendMail({
+    const emailTransporter = await getTransporter();
+    await emailTransporter.sendMail({
       from: process.env.EMAIL_USER,
       to,
       subject,
@@ -38,7 +39,8 @@ export const registerNotifications = async (user: {
   email: string;
   role: string;
 }) => {
-  await transporter.sendMail({
+  const emailTransporter = await getTransporter();
+  await emailTransporter.sendMail({
     from: process.env.EMAIL_USER,
     to: user.email,
     subject: "Welcome to the platform",
@@ -68,7 +70,8 @@ export const handleRecoveryEmail = async ({
   // FRONTED_URL: Replace with final frontend URL
   const resetLink = `${process.env.FRONTEND_URL}/reset?token=${token}`;
 
-  await transporter.sendMail({
+  const emailTransporter = await getTransporter();
+  await emailTransporter.sendMail({
     from: process.env.EMAIL_USER,
     to: email,
     subject: "Password Recovery",
