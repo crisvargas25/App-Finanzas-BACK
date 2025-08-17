@@ -9,6 +9,7 @@ export interface IUser extends Document {
   creationDate: Date;
   deleteDate?: Date;
   status: boolean;
+  currency: string;
 }
 
 const userSchema = new Schema<IUser>({
@@ -22,6 +23,10 @@ const userSchema = new Schema<IUser>({
     unique: true,
   },
   password: {
+    type: String,
+    required: true,
+  },
+  currency: {
     type: String,
     required: true,
   },

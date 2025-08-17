@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar contraseña</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f4ea;
+      margin: 0;
+      padding: 20px;
+      color: #1a3c34;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+    }
+
+    h1 {
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 26px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      text-align: justify;
+      margin-bottom: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #2e7d32;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      margin: 16px 0;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: #6b8e75;
+      margin-top: 30px;
+    }
+
+    .footer a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hola, {{name}}</h1>
+
+    <p>Has solicitado restablecer tu contraseña. Para continuar, haz clic en el siguiente botón:</p>
+
+    <p style="text-align: center;">
+      <a href="{{resetLink}}" class="button">Recuperar contraseña</a>
+    </p>
+
+    <p>Este enlace es válido por 15 minutos. Si no realizaste esta solicitud, puedes ignorar este mensaje.</p>
+
+    <div class="footer">
+      <p>¿Tienes preguntas? <a href="mailto:{{email}}">Contáctanos aquí</a>.</p>
+      <p>&copy; 2025 Todos los derechos reservados.</p>
+    </div>
+  </div>
+</body>
+</html>
