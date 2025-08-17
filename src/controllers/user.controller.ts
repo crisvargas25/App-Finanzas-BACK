@@ -125,7 +125,7 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
 export const updateUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const { name, email, role, status }: Partial<IUser> = req.body;
+    const { name, email, role, status, currency }: Partial<IUser> = req.body;
 
     if (!Types.ObjectId.isValid(id)) {
       res.status(400).json({ message: "Invalid user ID" });
@@ -168,6 +168,7 @@ export const updateUser = async (req: Request, res: Response): Promise<void> => 
         email: user.email,
         role: user.role,
         status: user.status,
+        currency: user.currency
       },
     });
   } catch (error) {
