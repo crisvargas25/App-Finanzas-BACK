@@ -1,5 +1,7 @@
 import express, { Application } from 'express';
+
 import cors from 'cors';
+
 import userRoutes from './routes/user.routes';
 import authRoutes from './routes/auth.route';
 import menuRoutes from './routes/menu.routes';
@@ -14,6 +16,7 @@ import transactionRoutes from './routes/transaction.routes';
 const app: Application = express();
 
 // Middlewares
+app.use(cors({ origin: '*' })); // Permite todos los orígenes (ajusta en producción)
 app.use(express.json());
 
 

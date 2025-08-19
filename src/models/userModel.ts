@@ -30,8 +30,8 @@ const userSchema = new Schema<IUser>({
   currency: {
     type: String,
     required: true,
-    enum: ["USD", "MXN", "EUR", "GBP"], 
-    default: "MXN",
+    enum: ["USD", "MXN", "EUR", "GBP"], // <-- Solo acepta estas monedas
+    default: "MXN", // <-- Opcional: valor por defecto
   },
   role: {
     type: [roleSchema],
